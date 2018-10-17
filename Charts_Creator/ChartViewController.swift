@@ -10,7 +10,7 @@ import UIKit
 
 import Charts
 
-class SecondViewController: UIViewController {
+class ChartViewController: UIViewController {
     // Create the necessary outlets
     @IBOutlet weak var pieChart: PieChartView!
     
