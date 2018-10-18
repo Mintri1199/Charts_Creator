@@ -8,24 +8,44 @@
 
 import UIKit
 
-class DataVC: UIViewController {
+class DataVC: UIViewController{
+    
     
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var numberTextField: UITextField!
     
+    @IBOutlet weak var colorView: UIView!
+    
+    var color = UIColor.red
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        colorView.backgroundColor = color
         // Do any additional setup after loading the view.
     }
     
+    // Allow the colorPickerView t0 unwind to the DataVC
+    @IBAction func unwindToDataVC(_ sender: UIStoryboardSegue){}
+
 
     @IBAction func saveValue(_ sender: Any) {
-        var dataObject: ValueObject
+        // find a way to pass an object to the table view
+        //var dataObject: ValueObject
         
+        var value: Double = 0
+        
+        // Check for text and if the text is a number in the numberTextField
+        if let textCheck = numberTextField.text{
+            if let numberCheck = Double(textCheck){
+                value = numberCheck
+            }
+        }else{
+            return
+        }
+
         // Check for textField's text to add it to the DataController
         if let text = textField.text{
-            DataController.addData(newData: text)
+            DataController.addData(newData: text, value: value, color: colorView.backgroundColor!)
         }else{
             return
         }

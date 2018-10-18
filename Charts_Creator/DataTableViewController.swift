@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DataViewController: UIViewController, UITabBarDelegate, UITableViewDataSource{
+class DataTableViewController: UIViewController, UITabBarDelegate, UITableViewDataSource{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -37,8 +37,9 @@ class DataViewController: UIViewController, UITabBarDelegate, UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "valueCell", for: indexPath)
         
-        cell.textLabel?.text = DataController.dataArray[indexPath.row]
-        
+        cell.textLabel?.text = DataController.dataArray[indexPath.row].0
+        cell.detailTextLabel?.text = String(DataController.dataArray[indexPath.row].1)
+        cell.backgroundColor = DataController.dataArray[indexPath.row].2
         return cell
     }
     
