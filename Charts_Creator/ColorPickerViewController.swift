@@ -8,7 +8,13 @@
 
 import UIKit
 
-class ColorPickerView: UIViewController{
+protocol colorPickerDelegate: class {
+    func changeViewBackgroundColor(_ color: UIColor?)
+}
+
+class ColorPickerViewController: UIViewController{
+    
+    weak var delegate: colorPickerDelegate?
     
     @IBOutlet weak var colorDisplay: UILabel!
     
@@ -33,22 +39,34 @@ class ColorPickerView: UIViewController{
     }
     
     @IBAction func redSliderAction(_ sender: Any) {
-
+        changeColors()
     }
 
     @IBAction func blueSliderAction(_ sender: Any) {
-
+        changeColors()
     }
 
     @IBAction func greenSliderAction(_ sender: Any) {
+        changeColors()
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        // Make a reference to the delegate to change the view color
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dataVC = segue.destination as? DataVC
+        dataVC?.colorView.backgroundColor = colorDisplay.backgroundColor!
     }
     
     func changeDisplayLabelColor(){
         colorDisplay.backgroundColor = UIColor(red: CGFloat(redColor), green: CGFloat(greenColor), blue: CGFloat(blueColor), alpha: 1)
+        changeLabelsNumber()
     }
     
     func changeColors(){
-        // Binding the color variables with the sliders' values
+        // Bind the color variables with the sliders' values then call changeDisplayLabelColor function
         redColor = redSlider.value
         blueColor = blueSlider.value
         greenColor = greenSlider.value
@@ -65,7 +83,7 @@ class ColorPickerView: UIViewController{
         redLabel.text = "Red: \(roundedRed)"
         blueLabel.text = "Blue: \(roundedBlue)"
         greenLabel.text = "Green: \(roundedGreen)"
-        
-        
     }
+ 
 }
+
