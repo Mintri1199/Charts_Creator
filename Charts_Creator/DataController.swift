@@ -10,10 +10,10 @@ import UIKit
 
 class DataController: NSObject {
     // Create one instance of dataArray throughout DataController Class
-    static var dataArray = [String]()
+    static var dataArray = [(String, Double, UIColor)]()
     
-    class func addData (newData: String){
-        DataController.dataArray.append(newData)
+    class func addData (newData: String, value: Double, color: UIColor){
+        DataController.dataArray.append((newData,value,color))
     }
     
     class func removeData(atIndex: Int){
