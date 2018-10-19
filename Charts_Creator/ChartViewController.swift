@@ -43,16 +43,20 @@ class ChartViewController: UIViewController {
             index += 1
         }
     }
+    // Contantly update the view
     override func viewWillAppear(_ animated: Bool) {
+    
+        listOfValues = [PieChartDataEntry]()
+        colors = [UIColor]()
+        
         // append the data from datacontroller into an Array of PieChartEntry values
         listOfValues = appendingListOfData()
-        print("Count: \(listOfValues.count)")
         
-        
-        print(listOfValues)
         // Add labels to the values PieChartEntry list
         addingLabels()
-        print(listOfValues)
+        // Add custom colors to the values
+        addingColor()
+        // Show the chart to
         updateCharts()
     }
     override func viewDidLoad() {
@@ -69,10 +73,10 @@ class ChartViewController: UIViewController {
     }
 
     func updateCharts(){
+        
         let chartDataSet = PieChartDataSet(values: listOfValues, label: "")
         let chartData = PieChartData(dataSet: chartDataSet)
-        let colorList = [UIColor.red, UIColor.cyan]
-        chartDataSet.colors = colorList as! [NSUIColor]//colors as [NSUIColor]
+        chartDataSet.colors = colors 
         
         pieChart.data = chartData
         
