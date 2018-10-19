@@ -7,23 +7,29 @@
 
 import UIKit
 
-class DataTableViewController: UIViewController, UITabBarDelegate, UITableViewDataSource{
+var row = 0
+
+class DataTableViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+        super.viewDidLoad()    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         tableView.reloadData()
+        print(DataController.dataArray)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+}
+
+extension DataTableViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -43,6 +49,12 @@ class DataTableViewController: UIViewController, UITabBarDelegate, UITableViewDa
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        row = indexPath.row
+    }
+    
+    
     // Allow deleting items from the listView
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
@@ -50,6 +62,7 @@ class DataTableViewController: UIViewController, UITabBarDelegate, UITableViewDa
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
-
+    
+    @IBAction func unwindToDataTableView(_ unwindSegue: UIStoryboardSegue) { }
+    
 }

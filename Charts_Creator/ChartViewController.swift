@@ -5,18 +5,16 @@
 //  Created by Jackson Ho on 10/15/18.
 //  Copyright © 2018 Jackson Ho. All rights reserved.
 //
+//  Charts library by Daniel Gindi
+
 
 import UIKit
 
 import Charts
 
 class ChartViewController: UIViewController {
-    // Create the necessary outlets
+    // Create the necessary outlets and attributes
     @IBOutlet weak var pieChart: PieChartView!
-    
-    // set the global variables for data
-    // var firstValue = PieChartDataEntry(value: 10)
-    // var secondValue = PieChartDataEntry(value: 34)
     
     // empty list of values
     var listOfValues = [PieChartDataEntry]()
@@ -24,12 +22,13 @@ class ChartViewController: UIViewController {
     // empty list of colors
     var colors = [UIColor]()
     
+    
     func appendingListOfData () -> [PieChartDataEntry]{
-        var listOfData = DataController.dataArray
+        
+        let listOfData = DataController.dataArray
         var getterList = [PieChartDataEntry]()
         
         for object in listOfData{
-
             getterList.append(PieChartDataEntry(value: object.1))
         }
         return getterList
@@ -43,6 +42,16 @@ class ChartViewController: UIViewController {
             index += 1
         }
     }
+    
+    func addingColor() {
+        var index = 0
+        
+        for _ in listOfValues{
+            colors.append(DataController.dataArray[index].2)
+            index += 1
+        }
+    }
+    
     // Contantly update the view
     override func viewWillAppear(_ animated: Bool) {
     
@@ -62,15 +71,6 @@ class ChartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    func addingColor() {
-        var index = 0
-        
-        for _ in listOfValues{
-            colors.append(DataController.dataArray[index].2)
-            index += 1
-        }
-    }
 
     func updateCharts(){
         
@@ -80,7 +80,7 @@ class ChartViewController: UIViewController {
         
         pieChart.data = chartData
         
-        
+
         
     }
 }
