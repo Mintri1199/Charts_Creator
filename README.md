@@ -10,5 +10,5 @@ Thus this app have two main views, one for displaying the values and the other d
 
 
 # Structure
-The Chart view will use the values from the tableView cells to generate a pie chart.
+The Chart view rely on the custom values from the tableView cells to generate a pie chart.
 The methods of passing data are unwinding segues and singleton.
