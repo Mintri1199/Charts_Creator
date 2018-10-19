@@ -10,21 +10,32 @@ import UIKit
 
 class CellDetailViewController: UIViewController {
 
+    @IBOutlet weak var cellNameTextField: UITextField!
+    @IBOutlet weak var cellValueTextField: UITextField!
+    
+    @IBOutlet weak var cellColorView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        cellNameTextField.text = DataController.dataArray[row].0
+        cellValueTextField.text = String(DataController.dataArray[row].1)
+        cellColorView.backgroundColor = DataController.dataArray[row].2
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func editColorButtonTapped(_ sender: Any) {
     }
-    */
-
+    
+    @IBAction func saveEditButtonTapped(_ sender: Any) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let _ = segue.destination as? DataTableViewController{
+            DataController.dataArray[row].0 = cellNameTextField.text!
+            DataController.dataArray[row].1 = Double(cellValueTextField.text!)!
+            DataController.dataArray[row].2 = cellColorView.backgroundColor!
+        }
+    }
+    @IBAction func unwindToEditCell(_ unwindSegue: UIStoryboardSegue) {}
 }

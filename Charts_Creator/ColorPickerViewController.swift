@@ -8,13 +8,7 @@
 
 import UIKit
 
-protocol colorPickerDelegate: class {
-    func changeViewBackgroundColor(_ color: UIColor?)
-}
-
 class ColorPickerViewController: UIViewController{
-    
-    weak var delegate: colorPickerDelegate?
     
     @IBOutlet weak var colorDisplay: UILabel!
     
@@ -51,15 +45,16 @@ class ColorPickerViewController: UIViewController{
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        // Make a reference to the delegate to change the view color
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dataVC = segue.destination as? DataVC
-        dataVC?.colorView.backgroundColor = colorDisplay.backgroundColor!
+        if let dataVC = segue.destination as? DataVC {
+            dataVC.colorView.backgroundColor = colorDisplay.backgroundColor!
+        } else if let editView = segue.destination as? CellDetailViewController{
+            editView.cellColorView.backgroundColor = colorDisplay.backgroundColor!
+        }
     }
-    
     func changeDisplayLabelColor(){
         colorDisplay.backgroundColor = UIColor(red: CGFloat(redColor), green: CGFloat(greenColor), blue: CGFloat(blueColor), alpha: 1)
         changeLabelsNumber()
