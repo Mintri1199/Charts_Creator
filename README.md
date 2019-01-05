@@ -1,14 +1,16 @@
 # Charts_Creator
-Project for Term 1 2018 intensive
+Project for Term 1 2018 intensive at Make School 
 
-The insperation for this project is to create an app that would allow the user 
-to create simple piechart quickly while giving them the ability to customize their values.
+The inspiration for this project is to create an app that would allow the user to create simple pie chart quickly while giving them the ability to customize their values.
 
-# Design
-I want to design a app that allow the user to create chart quickly.
-Thus this app have two main views, one for displaying the values and the other displaying the chart.
+### Design
+The app must be easy to use, with using as few ViewControllers as possible.
+It is also my first attempt at developing an iOS app thus I relied heavily on storyboards.
 
+### Structure
+* Uing the [Charts](https://github.com/danielgindi/Charts) library for the pie chart creation function.
+* All scenes are created using storyboards.
+* Used singleton and unwind as methods of passing data.
 
-# Structure
-The Chart view rely on the custom values from the tableView cells to generate a pie chart.
-The methods of passing data are unwinding segues and singleton.
+### Demo
+
