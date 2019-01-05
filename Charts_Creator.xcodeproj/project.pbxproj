@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		32303DCC99F65F4654A0A019 /* Pods_Charts_CreatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C1CDE4FA15D836415316C2 /* Pods_Charts_CreatorTests.framework */; };
 		445B1F5C2175067800122B4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F5B2175067800122B4B /* AppDelegate.swift */; };
-		445B1F5E2175067800122B4B /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F5D2175067800122B4B /* FirstViewController.swift */; };
-		445B1F602175067800122B4B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F5F2175067800122B4B /* SecondViewController.swift */; };
+		445B1F602175067800122B4B /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F5F2175067800122B4B /* ChartViewController.swift */; };
 		445B1F632175067800122B4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445B1F612175067800122B4B /* Main.storyboard */; };
 		445B1F652175067900122B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445B1F642175067900122B4B /* Assets.xcassets */; };
 		445B1F682175067900122B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445B1F662175067900122B4B /* LaunchScreen.storyboard */; };
 		445B1F732175067900122B4B /* Charts_CreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F722175067900122B4B /* Charts_CreatorTests.swift */; };
 		445B1F7E2175067900122B4B /* Charts_CreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B1F7D2175067900122B4B /* Charts_CreatorUITests.swift */; };
+		445B20B521765EDD00122B4B /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B20B421765EDD00122B4B /* DataTableViewController.swift */; };
+		445B20B721765F9E00122B4B /* DataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B20B621765F9E00122B4B /* DataVC.swift */; };
+		445B20B921766E9F00122B4B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B20B821766E9F00122B4B /* DataController.swift */; };
+		445B20BB2176810300122B4B /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B20BA2176810300122B4B /* ColorPickerViewController.swift */; };
+		44FE5CA2217965D700655C9F /* CellDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FE5CA1217965D700655C9F /* CellDetailViewController.swift */; };
+		44FE5CA4217A585E00655C9F /* HTPressableButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FE5CA3217A585E00655C9F /* HTPressableButton.framework */; };
 		62747F452CFD468B16E4001C /* Pods_Charts_CreatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AF9DFD6D4996990AB3CD9E /* Pods_Charts_CreatorUITests.framework */; };
 		9A1C57AB22EC9B282009FFF6 /* Pods_Charts_Creator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3AB9A110E65C228E727BDAB /* Pods_Charts_Creator.framework */; };
 /* End PBXBuildFile section */
@@ -41,8 +46,7 @@
 		22F94539F3A85B949AC1E8EE /* Pods-Charts_CreatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charts_CreatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Charts_CreatorTests/Pods-Charts_CreatorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		445B1F582175067800122B4B /* Charts_Creator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charts_Creator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		445B1F5B2175067800122B4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		445B1F5D2175067800122B4B /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		445B1F5F2175067800122B4B /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		445B1F5F2175067800122B4B /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		445B1F622175067800122B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		445B1F642175067900122B4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		445B1F672175067900122B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +57,12 @@
 		445B1F792175067900122B4B /* Charts_CreatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Charts_CreatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		445B1F7D2175067900122B4B /* Charts_CreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charts_CreatorUITests.swift; sourceTree = "<group>"; };
 		445B1F7F2175067900122B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		445B20B421765EDD00122B4B /* DataTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataTableViewController.swift; path = /Users/jackson_ho/dev/Graph_Maker/Charts_Creator/Charts_Creator/DataTableViewController.swift; sourceTree = "<absolute>"; };
+		445B20B621765F9E00122B4B /* DataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataVC.swift; sourceTree = "<group>"; };
+		445B20B821766E9F00122B4B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		445B20BA2176810300122B4B /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		44FE5CA1217965D700655C9F /* CellDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailViewController.swift; sourceTree = "<group>"; };
+		44FE5CA3217A585E00655C9F /* HTPressableButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HTPressableButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E441705F76BE9E62D5B8147 /* Pods-Charts_CreatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charts_CreatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Charts_CreatorTests/Pods-Charts_CreatorTests.release.xcconfig"; sourceTree = "<group>"; };
 		77BD2BD53FF630E55757DEDB /* Pods-Charts_Creator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charts_Creator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Charts_Creator/Pods-Charts_Creator.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7F466F76243B98FE131F9D /* Pods-Charts_CreatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Charts_CreatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Charts_CreatorUITests/Pods-Charts_CreatorUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44FE5CA4217A585E00655C9F /* HTPressableButton.framework in Frameworks */,
 				9A1C57AB22EC9B282009FFF6 /* Pods_Charts_Creator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +105,7 @@
 		01FA4CFEBF21B4F31178DE29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				44FE5CA3217A585E00655C9F /* HTPressableButton.framework */,
 				B3AB9A110E65C228E727BDAB /* Pods_Charts_Creator.framework */,
 				A7C1CDE4FA15D836415316C2 /* Pods_Charts_CreatorTests.framework */,
 				C6AF9DFD6D4996990AB3CD9E /* Pods_Charts_CreatorUITests.framework */,
@@ -140,8 +152,12 @@
 			isa = PBXGroup;
 			children = (
 				445B1F5B2175067800122B4B /* AppDelegate.swift */,
-				445B1F5D2175067800122B4B /* FirstViewController.swift */,
-				445B1F5F2175067800122B4B /* SecondViewController.swift */,
+				445B1F5F2175067800122B4B /* ChartViewController.swift */,
+				445B20B421765EDD00122B4B /* DataTableViewController.swift */,
+				44FE5CA1217965D700655C9F /* CellDetailViewController.swift */,
+				445B20B821766E9F00122B4B /* DataController.swift */,
+				445B20B621765F9E00122B4B /* DataVC.swift */,
+				445B20BA2176810300122B4B /* ColorPickerViewController.swift */,
 				445B1F612175067800122B4B /* Main.storyboard */,
 				445B1F642175067900122B4B /* Assets.xcassets */,
 				445B1F662175067900122B4B /* LaunchScreen.storyboard */,
@@ -353,12 +369,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Charts_Creator/Pods-Charts_Creator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/HTPressableButton/HTPressableButton.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTPressableButton.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -394,9 +412,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				445B1F602175067800122B4B /* SecondViewController.swift in Sources */,
+				445B20B921766E9F00122B4B /* DataController.swift in Sources */,
+				445B1F602175067800122B4B /* ChartViewController.swift in Sources */,
+				445B20BB2176810300122B4B /* ColorPickerViewController.swift in Sources */,
+				445B20B521765EDD00122B4B /* DataTableViewController.swift in Sources */,
+				445B20B721765F9E00122B4B /* DataVC.swift in Sources */,
+				44FE5CA2217965D700655C9F /* CellDetailViewController.swift in Sources */,
 				445B1F5C2175067800122B4B /* AppDelegate.swift in Sources */,
-				445B1F5E2175067800122B4B /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

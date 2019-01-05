@@ -309,7 +309,7 @@
                                         <rect key="frame" x="0.0" y="221.5" width="335" height="30"/>
                                         <state key="normal" title="Done"/>
                                         <connections>
-                                            <segue destination="GZ1-db-b0p" kind="unwind" unwindAction="unwindToDataVC:" id="jNj-ef-6B7"/>
+                                            <action selector="doneButtonTapped:" destination="6fN-c3-VvQ" eventType="touchUpInside" id="OXe-PU-96Z"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="udH-Ko-1je" userLabel="Labels and Sliders">
@@ -385,7 +385,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhm-ou-Sy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="GZ1-db-b0p" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3063" y="-466"/>
         </scene>

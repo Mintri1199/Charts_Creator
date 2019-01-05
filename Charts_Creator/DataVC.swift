@@ -5,12 +5,15 @@
 //  Created by Jackson Ho on 10/16/18.
 //  Copyright © 2018 Jackson Ho. All rights reserved.
 //  Thank you to Electronic Armory for his tutorial on iOS development
+import HTPressableButton
 
 import UIKit
 
-class DataVC: UIViewController{
-    
-    
+class DataVC: UIViewController, /* include the protocol*/ColorDelegate{
+    // conform to the protocol made
+    func updateColor(_ color: UIColor) {
+        colorView.backgroundColor = color
+    }
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var numberTextField: UITextField!
     
@@ -24,9 +27,16 @@ class DataVC: UIViewController{
         // Do any additional setup after loading the view.
     }
     
-    // Allow the colorPickerView t0 unwind to the DataVC
-    @IBAction func unwindToDataVC(_ sender: UIStoryboardSegue){}
-
+    // Allow the colorPickerView to unwind to the DataVC
+//    @IBAction func unwindToDataVC(_ sender: UIStoryboardSegue){}
+    
+    // prepare the segue to sender view controller
+    // This will reference the fucntion from the protocol in the sender view
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest =  segue.destination as? ColorPickerViewController{
+            dest.delegate = self
+        }
+    }
 
     @IBAction func saveValue(_ sender: Any) {
         // find a way to pass an object to the table view
@@ -51,18 +61,4 @@ class DataVC: UIViewController{
         }
         dismiss(animated: true, completion: nil)
     }
-}
-
-// The Data object that the graph will use
-class ValueObject{
-    var value: Double
-    var name: String
-    var color: UIColor
-    
-    init(value: Double, name: String, Color: UIColor) {
-        self.value = value
-        self.name = name
-        self.color = Color
-    }
-    
 }

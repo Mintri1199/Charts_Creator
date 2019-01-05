@@ -5,6 +5,7 @@ target 'Charts_Creator' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'Charts'
+  pod 'HTPressableButton'
   # Pods for Charts_Creator
 
   target 'Charts_CreatorTests' do

@@ -7,8 +7,14 @@
 //
 
 import UIKit
+// Understanding Delegate
+// Make the protocol
+protocol ColorDelegate{
+    func updateColor( _ color : UIColor)
+}
 
 class ColorPickerViewController: UIViewController{
+    var delegate: ColorDelegate? // instanciate the protocol
     
     @IBOutlet weak var colorDisplay: UILabel!
     
@@ -43,14 +49,15 @@ class ColorPickerViewController: UIViewController{
     @IBAction func greenSliderAction(_ sender: Any) {
         changeColors()
     }
-    
+    // Call the function of the protocol
     @IBAction func doneButtonTapped(_ sender: Any) {
-        
+        delegate?.updateColor(colorDisplay.backgroundColor!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dataVC = segue.destination as? DataVC {
-            dataVC.colorView.backgroundColor = colorDisplay.backgroundColor!
+            //self.delegate?.updateColor(colorDisplay.backgroundColor!)
+            // dataVC.colorView.backgroundColor = colorDisplay.backgroundColor!
         } else if let editView = segue.destination as? CellDetailViewController{
             editView.cellColorView.backgroundColor = colorDisplay.backgroundColor!
         }
