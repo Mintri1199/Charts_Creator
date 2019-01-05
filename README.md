@@ -14,3 +14,7 @@ It is also my first attempt at developing an iOS app thus I relied heavily on st
 
 ### Demo
 
+![alt text](https://github.com/Mintri1199/Charts_Creator/blob/master/Demo_Gifs/Demo1.gif)
+![alt text](https://github.com/Mintri1199/Charts_Creator/blob/master/Demo_Gifs/Demo2.gif)
+![alt text](https://github.com/Mintri1199/Charts_Creator/blob/master/Demo_Gifs/Demo3.gif)
+![alt text](https://github.com/Mintri1199/Charts_Creator/blob/master/Demo_Gifs/Demo4.gif)
